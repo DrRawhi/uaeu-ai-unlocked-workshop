@@ -99,11 +99,51 @@ body {
     color: #c8102e;
 }
 
+.section {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Speaker layout */
 .speaker {
-    margin-bottom: 15px;
-    padding: 10px;
-    border-left: 4px solid #c8102e;
-    background: #fafafa;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+/* Image styling */
+.speaker img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
+/* Text area */
+.speaker-info {
+    flex: 1;
+}
+
+.speaker-info h3 {
+    margin: 0 0 10px 0;
+}
+
+.speaker-info p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Responsive (mobile) */
+@media (max-width: 600px) {
+    .speaker {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 }
 </style>
 </head>
@@ -125,11 +165,12 @@ body {
 <!-- NAV -->
 <div class="nav">
     <a href="#section1">Event</a>
-    <a href="#section2">Speakers & Agenda</a>
+    <a href="#section2">Agenda</a>
     <a href="#section3">Requirements</a>
     <a href="#section4">Materials</a>
     <a href="#section5">Survey</a>
-    <a href="#section6">Contact</a>
+	<a href="#section6">Speakers</a>
+    <a href="#section7">Contact</a>
 </div>
 
 <!-- SECTION 1 -->
@@ -161,56 +202,55 @@ body {
     <thead>
         <tr style="background-color:#c8102e; color:white;">
             <th style="padding:10px; border:1px solid #ddd;">Time</th>
-            <th style="padding:10px; border:1px solid #ddd;">Task</th>
-            <th style="padding:10px; border:1px solid #ddd;">Speaker</th>
+            <th style="padding:10px; border:1px solid #ddd;">Session</th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td style="padding:10px; border:1px solid #ddd;">09:00 – 09:15</td>
-            <td style="padding:10px; border:1px solid #ddd;">Registration and Welcome Session</td>
-            <td style="padding:10px; border:1px solid #ddd;">Dr. Rawhi Alrae</td>
+            <td style="padding:10px; border:1px solid #ddd;">Registration and Welcoming</td>
         </tr>
         <tr>
             <td style="padding:10px; border:1px solid #ddd;">09:15 – 09:55</td>
             <td style="padding:10px; border:1px solid #ddd;">General Introduction to the World of AI</td>
-            <td style="padding:10px; border:1px solid #ddd;">Prof. Fady Alnajjar</td>
         </tr>
         <tr>
             <td style="padding:10px; border:1px solid #ddd;">09:55 – 10:35</td>
             <td style="padding:10px; border:1px solid #ddd;">Image Processing and Trends in Machine Learning</td>
-            <td style="padding:10px; border:1px solid #ddd;">Dr. Rafat Damseh</td>
+        </tr>
+		<tr>
+            <td style="padding:10px; border:1px solid #ddd;">10:35 – 10:45</td>
+            <td style="padding:10px; border:1px solid #ddd;">BREAK - 10 minutes</td>
         </tr>
         <tr>
-            <td style="padding:10px; border:1px solid #ddd;">10:35 – 11:15</td>
+            <td style="padding:10px; border:1px solid #ddd;">10:45 – 11:25</td>
             <td style="padding:10px; border:1px solid #ddd;">
                 Loading and Exploring Data in Orange (File, Data Table, Charts), Understanding Features and Targets, with Short Challenge Questions
             </td>
-            <td style="padding:10px; border:1px solid #ddd;">Dr. Rawhi Alrae</td>
         </tr>
         <tr>
-            <td style="padding:10px; border:1px solid #ddd;">11:15 – 11:55</td>
+            <td style="padding:10px; border:1px solid #ddd;">11:25 – 12:05</td>
             <td style="padding:10px; border:1px solid #ddd;">
                 Building the First Model (Decision Tree / Logistic Regression): A Simple Classification Model, with Short Challenge Questions
             </td>
-            <td style="padding:10px; border:1px solid #ddd;">Mr. Mohammad Banat</td>
         </tr>
         <tr>
-            <td style="padding:10px; border:1px solid #ddd;">11:55 – 12:35</td>
+            <td style="padding:10px; border:1px solid #ddd;">12:05 – 12:45</td>
             <td style="padding:10px; border:1px solid #ddd;">
                 Clustering (k-Means + Scatter Plot): Grouping Without Labels, with Short Challenge Questions
             </td>
-            <td style="padding:10px; border:1px solid #ddd;">Mr. Basheer Alrei</td>
+        </tr>
+		<tr>
+            <td style="padding:10px; border:1px solid #ddd;">12:45 – 01:00</td>
+            <td style="padding:10px; border:1px solid #ddd;">BREAK - 15 minutes</td>
         </tr>
         <tr>
-            <td style="padding:10px; border:1px solid #ddd;">12:35 – 01:00</td>
+            <td style="padding:10px; border:1px solid #ddd;">01:00 – 01:30</td>
             <td style="padding:10px; border:1px solid #ddd;">Final Project Overview</td>
-            <td style="padding:10px; border:1px solid #ddd;">Mr. Abdalraheem Al Smadi</td>
         </tr>
         <tr>
-            <td style="padding:10px; border:1px solid #ddd;">01:00 – 02:00</td>
-            <td style="padding:10px; border:1px solid #ddd;">Final Project Development</td>
-            <td style="padding:10px; border:1px solid #ddd;">Led by Mr. Abdalraheem Al Smadi with Panelists</td>
+            <td style="padding:10px; border:1px solid #ddd;">01:30 – 02:30</td>
+            <td style="padding:10px; border:1px solid #ddd;">Final Project Development / Groupwork</td>
         </tr>
     </tbody>
 </table>
@@ -264,6 +304,60 @@ body {
 
 <!-- SECTION 6 -->
 <div class="section" id="section6">
+    <h2>Speakers</h2>
+
+    <div class="speaker">
+        <img src="fady.jpg" alt="Prof. Fady Alnajjar">
+        <div class="speaker-info">
+            <h3>Prof. Fady Alnajjar</h3>
+            <p>Prof. Alnajjar is a Professor at United Arab Emirates University and Director of the AI & Robotics Lab, focusing on neuro-robotics and rehabilitation for neurological disorders.</p>
+        </div>
+    </div>
+
+    <div class="speaker">
+        <img src="rafat.jpg" alt="Dr. Rafat Damseh">
+        <div class="speaker-info">
+            <h3>Dr. Rafat Damseh</h3>
+            <p>Dr. Damseh is an Assistant Professor at United Arab Emirates University since 2021. His research focuses on AI/ML for medical imaging and automated diagnosis, particularly in neurovascular diseases.</p>
+        </div>
+    </div>
+
+    <div class="speaker">
+        <img src="rawhi.jpg" alt="Dr. Rawhi Alrae">
+        <div class="speaker-info">
+            <h3>Dr. Rawhi Alrae</h3>
+            <p>Dr. Alrae is an PhD instructor of Computer Science at United Arab Emirates University. His expertise spans Artificial Intelligence, Data Science, and Information Systems. His research focuses on AI applications, data quality, and intelligent systems.</p>
+        </div>
+    </div>
+
+    <div class="speaker">
+        <img src="smadi.jpeg" alt="Mr. AbdalRaheem Al Smadi">
+        <div class="speaker-info">
+            <h3>Mr. AbdalRaheem Al Smadi</h3>
+            <p>Mr. Alsmadi is an Instructor in the College of Information Technology at the United Arab Emirates University (UAEU). His research interest lies in the general area of Data Science with a focus on Natural Language Processing (NLP).</p>
+        </div>
+    </div>
+
+    <div class="speaker">
+        <img src="basheir.jpeg" alt="Mr. Basheir Al-Rei">
+        <div class="speaker-info">
+            <h3>Mr. Basheir Al-Rei</h3>
+            <p>Mr. Al-Rei is an Instructor in the College of Information Technology at the United Arab Emirates University (UAEU). He specializes in integrating technology to enhance learning.</p>
+        </div>
+    </div>
+
+    <div class="speaker">
+        <img src="banat.jpg" alt="Mr. Mohammad Banat">
+        <div class="speaker-info">
+            <h3>Mr. Mohammad Banat</h3>
+            <p>Mr. Banat is an Instructor in the College of Information Technology at the United Arab Emirates University (UAEU). He has over 10 years of industry experience in web development, product management, and business analysis.</p>
+        </div>
+    </div>
+
+</div>
+
+<!-- SECTION 7 -->
+<div class="section" id="section7">
     <h2>Contact</h2>
 
     <p><strong>Organizer:</strong> UAEU - College of Information Technology</p>
