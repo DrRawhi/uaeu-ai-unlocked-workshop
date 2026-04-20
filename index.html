@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AI Unlocked Workshop</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f5f7fa;
+}
+
+/* HEADER */
+.header {
+    background-color: #ffffff;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-bottom: 3px solid #c8102e;
+}
+
+.logo {
+    position: absolute;
+    left: 20px;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.title h1 {
+    margin: 0;
+    color: #c8102e;
+}
+
+.title h3 {
+    margin: 5px 0 0;
+    font-weight: normal;
+}
+
+/* NAV */
+.nav {
+    background-color: #c8102e;
+    padding: 10px;
+    text-align: center;
+}
+
+.nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* SECTIONS */
+.section {
+    padding: 30px;
+    margin: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+.section h2 {
+    color: #c8102e;
+}
+
+.button {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #c8102e;
+    color: white;
+	font-weight: bold;
+	font-size: 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.button.primary {
+	display: inline-block;
+	background-color: #c8102e;
+	color: white;
+    padding: 18px 40px;
+    font-size: 30px;
+	font-weight: bold;
+	text-decoration: none;
+    border-radius: 15px;
+    margin-top: 10px;
+
+}
+
+#countdown {
+    font-size: 20px;
+    font-weight: bold;
+    color: #c8102e;
+}
+
+.speaker {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-left: 4px solid #c8102e;
+    background: #fafafa;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="header">
+    <div class="logo">
+        <img src="logo.png" alt="CIT UAEU Logo">
+    </div>
+
+    <div class="title">
+        <h1>AI Unlocked</h1>
+        <h3>A Zero-Coding AI Quest</h3>
+    </div>
+</div>
+
+<!-- NAV -->
+<div class="nav">
+    <a href="#section1">Event</a>
+    <a href="#section2">Speakers & Agenda</a>
+    <a href="#section3">Requirements</a>
+    <a href="#section4">Materials</a>
+    <a href="#section5">Survey</a>
+    <a href="#section6">Contact</a>
+</div>
+
+<!-- SECTION 1 -->
+<div class="section" id="section1">
+    <h2>Event Information</h2>
+
+    <p>
+        <strong>About the Event:</strong><br>
+        AI Unlocked is an interactive, zero-coding workshop designed to introduce participants 
+        to Artificial Intelligence concepts through hands-on activities using user-friendly tools. 
+        The workshop aims to make AI accessible, practical, and engaging for both students and educators.
+    </p>
+
+    <p><strong>Date:</strong> Sunday, 26 April 2026</p>
+    <p><strong>Time:</strong> 9:00 AM – 2:00 PM</p>
+
+    <p><strong>Countdown to Event:</strong></p>
+    <div id="countdown"></div>
+
+    <p><strong>Workshop Link:</strong></p>
+    <a class="button primary" href="#">▶️ Join Workshop</a>
+
+</div>
+
+<!-- SECTION 2 -->
+<div class="section" id="section2">
+    <h2>Agenda</h2>
+    <table style="width:100%; border-collapse: collapse; margin-top: 15px;">
+    <thead>
+        <tr style="background-color:#c8102e; color:white;">
+            <th style="padding:10px; border:1px solid #ddd;">Time</th>
+            <th style="padding:10px; border:1px solid #ddd;">Task</th>
+            <th style="padding:10px; border:1px solid #ddd;">Speaker</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td style="padding:10px; border:1px solid #ddd;">09:00 – 09:15</td>
+            <td style="padding:10px; border:1px solid #ddd;">Registration and Welcome Session</td>
+            <td style="padding:10px; border:1px solid #ddd;">Dr. Rawhi Alrae</td>
+        </tr>
+        <tr>
+            <td style="padding:10px; border:1px solid #ddd;">09:15 – 09:55</td>
+            <td style="padding:10px; border:1px solid #ddd;">General Introduction to the World of AI</td>
+            <td style="padding:10px; border:1px solid #ddd;">Dr. Fady Najar</td>
+        </tr>
+        <tr>
+            <td style="padding:10px; border:1px solid #ddd;">09:55 – 10:35</td>
+            <td style="padding:10px; border:1px solid #ddd;">Image Processing and Trends in Machine Learning</td>
+            <td style="padding:10px; border:1px solid #ddd;">Dr. Rafat</td>
+        </tr>
+        <tr>
+            <td style="padding:10px; border:1px solid #ddd;">10:35 – 11:15</td>
+            <td style="padding:10px; border:1px solid #ddd;">
+                Loading and Exploring Data in Orange (File, Data Table, Charts), Understanding Features and Targets, with Short Challenge Questions
+            </td>
+            <td style="padding:10px; border:1px solid #ddd;">Dr. Rawhi Alrae</td>
+        </tr>
+        <tr>
+            <td style="padding:10px; border:1px solid #ddd;">11:15 – 11:55</td>
+            <td style="padding:10px; border:1px solid #ddd;">
+                Building the First Model (Decision Tree / Logistic Regression): A Simple Classification Model, with Short Challenge Questions
+            </td>
+            <td style="padding:10px; border:1px solid #ddd;">Mr. Mohammad Banat</td>
+        </tr>
+        <tr>
+            <td style="padding:10px; border:1px solid #ddd;">11:55 – 12:35</td>
+            <td style="padding:10px; border:1px solid #ddd;">
+                Clustering (k-Means + Scatter Plot): Grouping Without Labels, with Short Challenge Questions
+            </td>
+            <td style="padding:10px; border:1px solid #ddd;">Mr. Basheer Alrea</td>
+        </tr>
+        <tr>
+            <td style="padding:10px; border:1px solid #ddd;">12:35 – 01:00</td>
+            <td style="padding:10px; border:1px solid #ddd;">Final Project Overview</td>
+            <td style="padding:10px; border:1px solid #ddd;">Mr. Abdalraheem Smadi</td>
+        </tr>
+        <tr>
+            <td style="padding:10px; border:1px solid #ddd;">01:00 – 02:00</td>
+            <td style="padding:10px; border:1px solid #ddd;">Final Project Development</td>
+            <td style="padding:10px; border:1px solid #ddd;">Led by Mr. Abdalraheem Smadi with Panelists</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+<!-- SECTION 3 -->
+<div class="section" id="section3">
+    <h2>Requirements</h2>
+
+    <p>
+        To ensure a smooth workshop experience, participants are required to install the following 
+        applications before the event day.
+    </p>
+
+    <ul>
+        <li><strong>Zoom: </strong>
+            <a href="https://zoom.us/download" target="_blank">Download Zoom</a> <br><br>
+        </li>
+
+        <li><strong>Orange Data Mining: </strong>
+            <a href="https://orangedatamining.com/download/" target="_blank">Download Orange</a> <br><br>
+        </li>
+
+        <li><strong>PDF Reader: </strong>
+            <a href="https://get.adobe.com/reader/" target="_blank">Download Adobe Reader</a> 
+        </li>
+    </ul>
+</div>
+
+<!-- SECTION 4 -->
+<div class="section" id="section4">
+    <h2>Workshop Materials</h2>
+	<p>
+        Participants can access the workshop materials and handouts from here.
+    </p>
+    <a class="button" href="#">Access Materials</a>
+</div>
+
+<!-- SECTION 5 -->
+<div class="section" id="section5">
+    <h2>Feedback Survey</h2>
+
+    <p>Your feedback is very important to us.</p>
+
+    <p>
+        <strong>Note:</strong> Completing the survey is required to receive your certificate.
+    </p>
+
+    <a class="button" href="https://forms.gle/xNaQGTAky5dAw59S6">Fill Survey</a>
+</div>
+
+<!-- SECTION 6 -->
+<div class="section" id="section6">
+    <h2>Contact</h2>
+
+    <p><strong>Organizer:</strong> UAEU - College of Information Technology</p>
+
+    <!-- Email Button -->
+    <p>
+        <a class="button"
+           href="mailto:rawhi@uaeu.ac.ae; mbanat@uaeu.ac.ae; afalsmadi@uaeu.ac.ae; BAlrei@uaeu.ac.ae
+           ?subject=AI%20Unlocked%20Workshop%20Inquiry">
+           📧 Send Email
+        </a>
+    </p>
+
+    <!-- WhatsApp Button -->
+    <p>
+        <a class="button"
+           href="https://wa.me/97137135542?text=Dear%20Panelists,%20I%20have%20a%20question%20about%20the%20AI%20Unlocked%20Workshop."
+           target="_blank">
+           💬 Contact via WhatsApp
+        </a>
+    </p>
+</div>
+
+<!-- COUNTDOWN SCRIPT -->
+<script>
+const eventDate = new Date("April 26, 2026 09:00:00").getTime();
+
+const timer = setInterval(function() {
+    const now = new Date().getTime();
+    const distance = eventDate - now;
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+    document.getElementById("countdown").innerHTML =
+        days + "d " + hours + "h " + minutes + "m ";
+
+    if (distance < 0) {
+        clearInterval(timer);
+        document.getElementById("countdown").innerHTML = "Event Started";
+    }
+}, 1000);
+</script>
+
+</body>
+</html>
