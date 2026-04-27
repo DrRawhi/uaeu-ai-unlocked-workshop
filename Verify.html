@@ -1,51 +1,141 @@
-<script>
-const validCertificates = [
-  { 
-    id: "AIU-2026-001", 
-    name: "Rawhi Alrae",
-    email: "rawhi@uaeu.ac.ae"
-  },
-  { 
-    id: "AIU-2026-002", 
-    name: "Laila Al Swidani",
-    email: "laila@example.com"
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Unlocked Certificate Verification</title>
+
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #0b0f3c, #ffffff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
   }
-];
 
-const params = new URLSearchParams(window.location.search);
-const id = params.get("id") || "";
-const name = params.get("name") || "";
+  .card {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    width: 500px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+    text-align: center;
+  }
 
-const matched = validCertificates.find(cert =>
-  cert.id.toLowerCase() === id.toLowerCase() &&
-  cert.name.toLowerCase().trim() === name.toLowerCase().trim()
-);
+  h1 {
+    margin-bottom: 10px;
+    color: #1a1a1a;
+  }
 
-const statusBox = document.getElementById("status");
-const participantName = document.getElementById("participantName");
-const certificateId = document.getElementById("certificateId");
+  .status {
+    margin: 20px 0;
+    font-size: 22px;
+    font-weight: bold;
+    padding: 15px;
+    border-radius: 10px;
+  }
 
-if (matched) {
-  statusBox.innerHTML = `
-    <div style="font-size:28px; margin-bottom:10px;">✅ Certificate Verified</div>
-    <div style="font-size:16px; font-weight:600;">
-      This certificate is officially verified by UAEU College of Information Technology.
-    </div>
-  `;
-  statusBox.className = "status valid";
+  .valid {
+    background: #e6f7f0;
+    color: #0a8f68;
+  }
 
-  participantName.textContent = matched.name;
-  certificateId.textContent = matched.id;
-} else {
-  statusBox.innerHTML = `
-    <div style="font-size:28px; margin-bottom:10px;">⚠️ Certificate Not Verified</div>
-    <div style="font-size:16px; font-weight:600;">
-      We could not verify this certificate. Please check the QR code or certificate ID.
-    </div>
-  `;
-  statusBox.className = "status invalid";
+  .invalid {
+    background: #fdecea;
+    color: #c8102e;
+  }
 
-  participantName.textContent = name || "Not provided";
-  certificateId.textContent = id || "Not provided";
-}
+  .info {
+    margin-top: 15px;
+    font-size: 16px;
+  }
+
+  .label {
+    font-weight: bold;
+  }
+
+  .footer {
+    margin-top: 25px;
+    font-size: 13px;
+    color: #777;
+  }
+
+  .btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 20px;
+    background: #c8102e;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+  }
+</style>
+
+</head>
+<body>
+
+<div class="card">
+  <h1>AI Unlocked</h1>
+  <p>Certificate Verification</p>
+
+  <div id="status" class="status">Checking...</div>
+
+  <div class="info">
+    <p><span class="label">Name:</span> <span id="participantName">-</span></p>
+    <p><span class="label">Certificate ID:</span> <span id="certificateId">-</span></p>
+    <p><span class="label">Event:</span> AI Unlocked: A Zero-Coding AI Quest</p>
+  </div>
+
+  <a class="btn" href="https://drrawhi.github.io/uaeu-ai-unlocked-workshop/" target="_blank">
+    Visit Event Website
+  </a>
+
+  <div class="footer">
+    UAEU – College of Information Technology
+  </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const validCertificates = [
+    { id: "AIU-2026-001", name: "Rawhi Alrae" },
+    { id: "AIU-2026-002", name: "Laila Al Swidani" }
+  ];
+
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get("id") || "";
+  const name = params.get("name") || "";
+
+  const statusBox = document.getElementById("status");
+  const participantName = document.getElementById("participantName");
+  const certificateId = document.getElementById("certificateId");
+
+  const matched = validCertificates.find(cert =>
+    cert.id.toLowerCase() === id.toLowerCase() &&
+    cert.name.toLowerCase().trim() === name.toLowerCase().trim()
+  );
+
+  if (matched) {
+    statusBox.innerHTML = "✅ Certificate Verified";
+    statusBox.className = "status valid";
+
+    participantName.textContent = matched.name;
+    certificateId.textContent = matched.id;
+  } else {
+    statusBox.innerHTML = "❌ Certificate Not Verified";
+    statusBox.className = "status invalid";
+
+    participantName.textContent = name || "Not provided";
+    certificateId.textContent = id || "Not provided";
+  }
+
+});
 </script>
+
+</body>
+</html>
