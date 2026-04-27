@@ -1,4 +1,51 @@
+<script>
 const validCertificates = [
-  { id: "AIU-2026-001", name: "Rawhi Alrae" },
-  { id: "AIU-2026-002", name: "Zaina Alrae" }
+  { 
+    id: "AIU-2026-001", 
+    name: "Rawhi Alrae",
+    email: "rawhi@uaeu.ac.ae"
+  },
+  { 
+    id: "AIU-2026-002", 
+    name: "Laila Al Swidani",
+    email: "laila@example.com"
+  }
 ];
+
+const params = new URLSearchParams(window.location.search);
+const id = params.get("id") || "";
+const name = params.get("name") || "";
+
+const matched = validCertificates.find(cert =>
+  cert.id.toLowerCase() === id.toLowerCase() &&
+  cert.name.toLowerCase().trim() === name.toLowerCase().trim()
+);
+
+const statusBox = document.getElementById("status");
+const participantName = document.getElementById("participantName");
+const certificateId = document.getElementById("certificateId");
+
+if (matched) {
+  statusBox.innerHTML = `
+    <div style="font-size:28px; margin-bottom:10px;">✅ Certificate Verified</div>
+    <div style="font-size:16px; font-weight:600;">
+      This certificate is officially verified by UAEU College of Information Technology.
+    </div>
+  `;
+  statusBox.className = "status valid";
+
+  participantName.textContent = matched.name;
+  certificateId.textContent = matched.id;
+} else {
+  statusBox.innerHTML = `
+    <div style="font-size:28px; margin-bottom:10px;">⚠️ Certificate Not Verified</div>
+    <div style="font-size:16px; font-weight:600;">
+      We could not verify this certificate. Please check the QR code or certificate ID.
+    </div>
+  `;
+  statusBox.className = "status invalid";
+
+  participantName.textContent = name || "Not provided";
+  certificateId.textContent = id || "Not provided";
+}
+</script>
